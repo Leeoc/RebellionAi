@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<meta name="robots" content="noindex">
+<html>
+<head>
+    <script src='script.js'></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&display=swap" rel="stylesheet">
+
+  <title>RebellionAi</title>
+<style id="jsbin-css">
+
+
+body {
+    background: #fafafa;
+    margin: 0;
+}
+
+.main {
+    width: 50%;
+    margin: 0 auto;
+    font-family: "Open Sans";
+    
+}
+
+p {
+    display: block;
+}
+
+h1 {
+    display: inline-block;
+    font-style: bold;
+    color: #008DD5;
+    font-size: 35px;
+    border-top: 170px;
+    margin-top: 130px;
+    margin-bottom: 0px;
+    transition: 0.3s ease;
+}
+
+#ai {
+    color: #DE3C4B;
+}
+h2 {
+    margin-top: 10px;
+    margin-bottom: 80px;
+}
+
+input {
+    -webkit-appearance: none;
+    display: block;
+    width: 100%;
+    font-size: 20px;
+    padding: 20px;
+    border: none;
+    border-bottom: 4px dashed black;
+    font-family: 'Libre Baskerville';
+    outline: none;
+}
+
+button {
+    outline: none;
+    margin-top: 50px;
+    font-size: 15px;
+    padding: 15px 40px;
+    background: none;
+    border: none;
+    font-family: 'Open Sans';
+    margin-bottom: 30px;
+    border: 3px solid;
+    transition: 0.1s ease;
+}
+
+button:hover {
+    cursor: pointer;
+    border: 3px solid #59F7A8;
+}
+
+#result {
+    margin-bottom: 20px;
+}
+
+#footer {
+    height: 80px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+#r {
+    background-color: #DE3C4B;
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+}
+
+#g {
+    background-color: #008DD5;
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 33.33%;
+    top: -160px;
+}
+
+#b {
+    background-color: #59F7A8;
+    width: 33.33%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    left: 66.66%;
+    top: -80px;
+}
+
+#graph {
+    display: none;
+}
+
+
+
+.bar {
+    width: 80%;
+    height: 30px;
+    background-color: transparent;
+    margin: 20px auto 0px;
+    border: 2px solid #eee;
+    border-radius: 15px;
+}
+
+#barfill {
+    width: 0;
+    background-color: #59F7A8;
+    height: 30px;
+    border-radius: 15px;
+    transition: 0.5s ease;
+}
+
+
+</style>
+</head>
+<body>
+<div class="main">
+    <h1 id="monitor">Rebellion<span id='ai'>Ai<span></h1>
+    <h2>Protecting political impartiality in media</h2>
+    <p>Enter your text here:</p>
+    <input type="" id="client_input" onclick='reset()' onfocus='reset()' autofocus>
+    <button id="submit" onclick="submit()">Submit</button>
+    <h2 id="result"></h2>
+    <div id="graph">
+        <h3 id="conf">The model is <span id="percent"></span>% confident that the text is biased.</h3>
+        <div class="bar" id='bar'>
+            <div id="barfill"></div>
+        </div>
+        
+    </div>
+</div>
+<div id='footer'>
+    <div id="r"></div>
+    <div id="b"></div>
+    <div id="g"></div>
+</div>
+</body>
+</html>

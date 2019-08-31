@@ -41,13 +41,12 @@ def vectorize(df):
     X = df['text']
     print(list(X))
     y = df['bias']
-    global count_vect
-    count_vect = CountVectorizer()
-    X_counts = count_vect.fit_transform(X)
-    global tfidf_transformer
-    tfidf_transformer = TfidfTransformer()
-    X_tfidf = tfidf_transformer.fit_transform(X_counts)
+    tfidf_vect = TfidfVectorizer()
+    X_tfidf = tfidf_vect.fit_transform(X)
+    # saving the vocab of vect, so predictions can be made in webapp
+    pickle.dump(tfidf_vect.vocabulary_,open("tfidf.pkl","wb"))
     return X_tfidf
+    
     
 def train_model(X,y):
     sampler = RandomOverSampler()
@@ -64,7 +63,11 @@ def train_model(X,y):
 
 
 if __name__ == "__main__":
+    print("Cleaning data")
     data = clean_data(DATA_PATH)
+    print("Vectorizing data")
     y = data["bias"]
     X = vectorize(data)
+    print("Training model")
     train_model(X,y)
+    print("Finished")
