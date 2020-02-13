@@ -56,20 +56,6 @@ submit = function() {
         }, 500);
         
       }
-
-
-
-        /*if (response == '[1]'){
-            result.style = 'color: #DE3C4B';
-            result.innerHTML = 'You should be cautious about the impartiality of the source of this material.';
-        } else if (response == '[0]'){
-            result.style = 'color: #008DD5';
-            result.innerHTML = 'This text shows no sign of political bias.';
-
-        }
-
-      console.log(response);*/
-
     }
   });
   xhttp.open("GET", ENDPOINT + "/?input=" + text, true);

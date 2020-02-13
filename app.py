@@ -4,7 +4,7 @@ from flask import request
 from flask_cors import CORS
 import random
 from joblib import load
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
+from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import SGDClassifier, LogisticRegression
 import os
 import pickle, re
